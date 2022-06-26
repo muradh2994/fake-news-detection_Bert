@@ -1,5 +1,4 @@
-# fake-news-detection_Bert
-**Topic: Fake news during the pandemic: detecting super spreaders user in social media**
+# Fake news during the pandemic: detecting super spreaders user in social media
 
 In this project, we developed a web application called “verifyit” which checks the authenticity of tweets
 using the BERT model and also allows us to detect the super-spreader through influence score. The application deals with two objectives:
