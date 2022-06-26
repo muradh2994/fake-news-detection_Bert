@@ -1,0 +1,249 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+
+.about-div{
+  display:none;
+}
+
+.result-class{
+    font-style: italic;
+    font-size: 25px;
+    font-family: sans-serif;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(0, -50%);
+    padding: 10px;
+  }
+  
+.submit-button {
+  font-weight: 800;
+  margin-left: 20px;
+  height: 42px;
+  background-color: #17a2b8;
+  color: white;
+  border-radius: 16px;
+  font-weight: 500;
+  width: 75px;
+}
+
+.button-border {
+  border-style: groove;
+  border-radius: 48px;
+  height: 50px;
+  width: 550px !important;
+}
+
+h1 {
+  color: #369;
+  font-family: 'Inter', sans-serif;
+  font-size: 250%;
+}
+
+h2,
+h3 {
+  color: #444;
+  font-family: 'Inter', sans-serif;
+  font-weight: lighter;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+body,
+input[type="text"],
+button {
+  color: #333;
+  font-family: 'Inter', sans-serif;
+}
+
+button {
+  background-color: white;
+  border: none;
+  border-radius: 48px;
+  cursor: pointer;
+  color: black;
+  font-size: 16px;
+  padding: 6px 17px !important;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+}
+
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+}
+
+/* everywhere else */
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+.head-font {
+  color: white;
+  font-weight: 800;
+  font-size: 24px;
+}
+
+.menu-items {
+  padding-top: 4%;
+  padding-right: 5%;
+  color: white;
+  font-size: 16px;
+  width: 14vw;
+}
+
+.main-div {
+  padding: 1% 12%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 !important;
+}
+
+.menu-item:hover {
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.menu-item {
+  cursor:pointer;
+  padding-bottom: 8px;
+  color: white;
+}
+
+.menu-nav {
+  display: flex;
+  justify-content: space-between
+}
+
+.menu-and-search {
+  display: flex;
+}
+
+.is-active {
+  border-bottom: 3px solid white;
+}
+
+.search-content {
+  width: 300px;
+  height: 40px;
+  overflow: hidden;
+  list-style-type: none;
+  cursor: pointer;
+}
+
+body {
+    background-color: #e0ddd3;
+}
+
+.logo{
+        font-style: italic;
+        font-size: 25px;
+        color: white;
+        font-family: sans-serif;
+}
+
+.about-content {
+            max-width: 560px
+}
+
+.logo {
+    cursor: pointer;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+   $(document).ready(function(){
+
+    $('.input-type').attr("value", "tweet");
+       
+    $(".submit-button").click(function(){
+          $(".result-class").css({ display: "block" });
+    });
+
+   $("#tweet-menu" ).click(function() {
+		$('#tweet-menu').addClass('is-active');
+		$('#user-menu').removeClass('is-active');
+		$('#about-menu').removeClass('is-active');
+        $('.about-content').addClass('about-div');
+        $(".search-div").css({ display: "block" });
+        $('input[type="text"]').attr("placeholder", "search for tweets");
+        $('.input-type').attr("value", "tweet");
+        $(".result-class").css({ display: "none" });
+        $('.result-class').html("");
+   });   
+   
+   $( "#user-menu" ).click(function() {
+		$('#user-menu').addClass('is-active');
+		$('#tweet-menu').removeClass('is-active');
+		$('#about-menu').removeClass('is-active');
+        $('.about-content').addClass('about-div');
+        $(".search-div").css({ display: "block" });
+        $('input[type="text"]').attr("placeholder", "search for users");
+        $('.input-type').attr("value", "user");
+        $(".result-class").css({ display: "none" });
+        $('.result-class').html("");
+   }); 
+   
+   $( "#about-menu" ).click(function() {
+		$('#about-menu').addClass('is-active');
+		$('#user-menu').removeClass('is-active');
+		$('#tweet-menu').removeClass('is-active');
+        $('.about-content').removeClass('about-div');
+        $(".search-div").css({ display: "none" });
+        $(".result-class").css({ display: "none" });
+        $('.result-class').html("");
+   }); 
+});
+
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-right bg-info main-div">
+  <div>
+    <span class="logo">VerifyIt</span>
+  </div>
+
+  <div class="menu-and-search">
+    <div class="menu-items">
+      <nav class="menu-nav">
+        <a class="menu-item is-active" id="tweet-menu">Tweets </a>
+        <a class="menu-item"  id="user-menu">User </a>
+        <a class="menu-item"  id="about-menu">About </a>
+      </nav>
+    </div>
+  </div>
+</nav>
+<div class="center">
+  <div class="about-content about-div">
+    <h1>About</h1>
+    <p>This website helps in identifying the tweets whether they are fake or real and identifying the users if they are superspreaders or not. The <b><i>Tweets</i></b> section in the navigation bar can be used to identify whether the tweets are Real or Fake. The <b><i>User</i></b> section in the navigation bar can be used to identify whether a user is superspreader or not. </p>
+  </div>
+<div class="search-div">
+      <form class="form-inline my-2 my-lg-0 ml-auto" action="{{ url_for('getprediction')}}" method="post">
+          <input  class="d-inline form-control mr-sm-2 button-border"  type="text"  name="tweet" placeholder="search for tweets" required="required">
+          <input class="d-none input-type" type="text" name="inputtype" required="required" value="tweet">
+        <button class="btn btn-primary p-1 submit-button" type="submit">Search</button>
+      </form>
+    </div>
+    <div class="result-class p-4 mt-4 ml-4">{{ output }}</div>
+</div>
+</div>
+</body>
+</html>
